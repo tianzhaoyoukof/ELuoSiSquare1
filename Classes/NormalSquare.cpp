@@ -88,7 +88,7 @@ void NormalSquare::rightOne( std::vector<std::vector<bool>>& v )
 
 void NormalSquare::allSquareKindChange( bool b[8][6] ,int & I,int & J,int kind)
 {
-	//kind :  0ï¿½ï¿½ï¿½ï¿½   1ï¿½ï¿½ï¿½ï¿½   2ï¿½ï¿½ï¿½ï¿½  3ï¿½ï¿½ï¿½ï¿½
+	//kind :  0£ºÏÂ   1£º×ó   2£ºÓÒ  3£º±ä
 	switch(m_squareKind)
 	{
 	case SQUARE1:
@@ -549,15 +549,83 @@ bool NormalSquare::isTouchBottom()
 	return false;
 }
 
-void NormalSquare::newSquare( int ix,int iy,int kind )
+void NormalSquare::showPreView( std::vector<std::vector<bool>>& v )
 {
 	bool temp[8][6] = {false};
 	int i,j;
 	int I,J;
 
-void NormalSquare::changeAngle()
-{
-	++ m_angle;
-	m_angle %= 4;
+	std::vector<bool> one;
+
+	switch(m_squareKind)
+	{
+	case SQUARE1:case SQUARE2:case SQUARE3:
+		{
+			m_indexX = 1,m_indexY = 3;
+			break;
+		}
+	case SQUARE4:
+		{
+			m_indexX = 0,m_indexY = 3;
+			break;
+		}
+	case SQUARE5:
+		{
+			m_indexX = 1,m_indexY = 3;
+			break;
+		}
+	case SQUARE6:
+		{
+			break;
+		}
+	case SQUARE7:
+		{
+			break;
+		}
+	case SQUARE8:
+		{
+			break;
+		}
+	case SQUARE9:
+		{
+			break;
+		}
+	case SQUARE10:
+		{
+			break;
+		}
+	case SQUARE11:
+		{
+			break;
+		}
+	case SQUARE12:
+		{
+			break;
+		}
+	case SQUARE13:
+		{
+			break;
+		}
+	case SQUARE14:
+		{
+			break;
+		}
+	case SQUARE15:
+		{
+			break;
+		}
+	case SQUARE16:
+		{
+			break;
+		}
+	case SQUARE17:
+		{
+			break;
+		}
+	}
+
+	allSquareKindChange(temp,I,J,2);
+
+	PUSH(i,j,I,J,v,temp,one);
 }
 
