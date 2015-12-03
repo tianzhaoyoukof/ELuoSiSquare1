@@ -1,4 +1,5 @@
 #include "NormalMode.h"
+#include "time.h"
 
 Scene* NormalMode::createMode()
 {
@@ -44,7 +45,8 @@ bool NormalMode::init()
 			m_rightTile[i][j]->setUNVisiable();
 		}
 
-	this->schedule(schedule_selector(NormalMode::myUpdate),0.5f);
+	this->schedule(schedule_selector(NormalMode::myUpdate),0.6f);
+	this->schedule(schedule_selector(NormalMode::myCollionUpdate),0.2f);
 
 	return true;
 }
@@ -52,9 +54,11 @@ bool NormalMode::init()
 NormalMode::NormalMode():
 	m_baseX(0),
 	m_baseY(0),
-	m_square(7,13,1)
+	m_square(4,19,5),
+	m_nextSquare(7,13,4)
 {
-
+	int x = rand() % 2 + 1;
+	m_nextSquare.newSquare(1,1,x);
 }
 
 void NormalMode::addBackGround()
@@ -107,26 +111,121 @@ void NormalMode::addBackGround()
 void NormalMode::btnUPCallBack()
 {
 	log("up");
+	if(m_isCollisionTakePlace)
+		return ;
 }
 
 void NormalMode::btnDOWNCallBack()
 {
 	log("down");
+	if(m_isCollisionTakePlace)
+		return ;
+	myUpdate(0.1f);
 }
 
 void NormalMode::btnLEFTCallBack()
 {
 	log("left");
+	if(m_isCollisionTakePlace)
+		return ;
+	m_currPos.clear();
+	m_square.leftOne(m_currPos);
+
+	//左边界检测
+	bool flag = false;
+	int ox = m_square.getIndexX();
+	int oy = m_square.getIndexY();
+
+	int n = m_currPos.size();
+	int m = 0;
+	if(n)
+		m = m_currPos[0].size();
+
+	for(int i = 0 ; i < n ; ++ i)
+	{
+		for(int j = 0 ; j < m ; ++ j)
+		{
+			if(m_lastIndexX + j < 0 || m_lastIndexX + j >= 10 || m_lastIndexY + i < 0)
+				continue;
+			if(m_currPos[i][j] == true)
+			{
+				if(m_leftTile[m_lastIndexY + i][m_lastIndexX + j - 1]->getTileVisible())
+				{
+					flag = true;
+					if(m_lastIndexX + j != 0)
+						m_square.rightOne(m_lastPos);
+				}
+				break;
+			}
+		}
+	}
+	if(!flag)
+	{
+		refreshSquarePos(ox,oy);
+		m_lastIndexX = ox;
+		m_lastIndexY = oy;
+	}
 }
 
 void NormalMode::btnRIGHTCallBack()
 {
 	log("right");
+	if(m_isCollisionTakePlace)
+		return ;
+	m_currPos.clear();
+	m_square.rightOne(m_currPos);
+	
+	//右边界检测
+	bool flag = false;
+	int ox = m_square.getIndexX();
+	int oy = m_square.getIndexY();
+
+	int n = m_currPos.size();
+	int m = 0;
+	if(n)
+		m = m_currPos[0].size();
+
+	for(int i = 0 ; i < n ; ++ i)
+	{
+		for(int j = m - 1 ; j >= 0 ; -- j)
+		{
+			if(m_lastIndexX + j < 0 || m_lastIndexX + j >= 10 || m_lastIndexY + i < 0)
+				continue;
+			if(m_currPos[i][j] == true)
+			{
+				if(m_leftTile[m_lastIndexY + i][m_lastIndexX + j + 1]->getTileVisible())
+				{
+					flag = true;
+					if(m_lastIndexX + j != 9)
+						m_square.leftOne(m_lastPos);
+				}
+				break;
+			}
+		}
+		if(flag)
+			break;
+	}
+
+	if(!flag)
+	{
+		refreshSquarePos(ox,oy);
+		m_lastIndexX = ox;
+		m_lastIndexY = oy;
+	}
 }
 
 void NormalMode::btnCHANGECallBack()
 {
 	log("change");
+	if(m_isCollisionTakePlace)
+		return ;
+	m_currPos.clear();
+	m_square.changeAngle(m_currPos);
+	int ox = m_square.getIndexX();
+	int oy = m_square.getIndexY();
+	refreshSquarePos(ox,oy);
+	m_lastIndexX = ox;
+	m_lastIndexY = oy;
 }
 
 void NormalMode::myUpdate( float tmd )
@@ -134,16 +233,28 @@ void NormalMode::myUpdate( float tmd )
 	log("update");
 	/*游戏暂停的话,直接返回*/
 
+	/*显示预览窗口*/
+	showPreviewSquare();
+
 	/*碰撞检测*/
-	if(isCollion())
+	if(isCollion() || m_isCollisionTakePlace)
+	{
+		//检测满行消去
+		removeRow();
+		int ox = rand() % 4 + 1;
+		m_lastPos.clear();
+		m_square.newSquare(3,19,m_nextSquare.getSquareKind());
+		m_nextSquare.newSquare(1,1,ox);
+		m_isCollisionTakePlace = false;
 		return ;
+	}
 
 	/*目前正在运动的方块进行位置更新*/
+	m_currPos.clear();
 	m_square.downOne(m_currPos);
 	int ox = m_square.getIndexX();
 	int oy = m_square.getIndexY();
 	refreshSquarePos(ox,oy);
-	m_currPos.clear();
 	m_lastIndexX = ox;
 	m_lastIndexY = oy;
 
@@ -151,6 +262,7 @@ void NormalMode::myUpdate( float tmd )
 
 
 	/*检查行数是否可以消灭*/
+
 }
 
 void NormalMode::refreshSquarePos( int ox , int oy)
@@ -164,6 +276,8 @@ void NormalMode::refreshSquarePos( int ox , int oy)
 	for(int i = 0 ; i < n ; ++ i)
 		for(int j = 0 ; j < m ; ++j)
 		{
+			if(m_lastIndexY + i < 0 || m_lastIndexY + i >= 20 || m_lastIndexX + j < 0 || m_lastIndexX + j >= 10) 
+				continue;
 			if(m_lastPos[i][j] == true)
 				m_leftTile[m_lastIndexY + i][m_lastIndexX + j]->setUNVisiable();
 		}
@@ -176,10 +290,10 @@ void NormalMode::refreshSquarePos( int ox , int oy)
 	{
 		for(int j = 0 ; j < m ; ++j)
 		{
+			if(oy + i < 0 || oy + i >= 20 || ox + j < 0 || ox + j >=10)
+				continue;
 			if(m_currPos[i][j] == true)
 				m_leftTile[oy + i][ox + j]->setTileVisible(BLACK);
-			else if(oy + i >= 0)
-				m_leftTile[oy + i][ox + j]->setUNVisiable();
 		}
 	}
 
@@ -190,19 +304,93 @@ void NormalMode::refreshSquarePos( int ox , int oy)
 bool NormalMode::isCollion()
 {
 	int n = m_lastPos.size();
-	int m;
+	int m = 0;
 	if(n != 0)
 		m = m_lastPos[0].size();
-	for(int i = 0 ; i < n ; ++ i)
-		for(int j = 0 ; j < m ; ++j)
+
+	for(int j = 0 ; j < m ; ++ j)
+	{
+		for(int i = 0 ; i < n ; ++ i)
 		{
+			if(m_lastIndexX + j < 0 || m_lastIndexX + j >= 10 || m_lastIndexY + i < 0)
+				continue;
+			if(m_square.isTouchBottom())
+				return true;
 			if(m_lastPos[i][j] == true)
 			{
-				if(m_lastIndexY + i <= 0)
+				if(m_leftTile[m_lastIndexY + i - 1][m_lastIndexX + j]->getTileVisible())
 					return true;
-				log("%d,%d",m_lastIndexY + i,m_lastIndexX + j);
+				break;
 			}
-			
 		}
+	}
 	return false;
+}
+
+void NormalMode::showPreviewSquare()
+{
+	m_nextPos.clear();
+	m_nextSquare.showPreView(m_nextPos);
+	int n = m_nextPos.size();
+	int m = 0;
+	if(n)
+		m = m_nextPos[0].size();
+	int ox = m_nextSquare.getIndexX();
+	int oy = m_nextSquare.getIndexY();
+	for(int i = 0 ; i < 8 ; ++ i)
+		for(int j = 0 ; j < 6 ; ++ j)
+		{
+			m_rightTile[i][j]->setUNVisiable();
+		}
+	for(int i = 0 ; i < n ; ++ i)
+		for(int j = 0 ; j < m ; ++ j)
+		{
+			if(m_nextPos[i][j] == true)
+				m_rightTile[oy + i][ox + j]->setTileVisible(BLACK);
+		}
+}
+
+void NormalMode::myCollionUpdate( float tmd )
+{
+	if(isCollion())
+	{
+		m_isCollisionTakePlace = true;
+	}
+	else
+	{
+		m_isCollisionTakePlace = false;
+	}
+}
+
+void NormalMode::removeRow()
+{
+	bool flag = false;
+	for(int i = 0 ; i < 20 ; ++ i)
+	{
+		flag = true;
+		for(int j = 0 ; j < 10 ; ++ j)
+			if(!m_leftTile[i][j]->getTileVisible())
+			{
+				flag = false;
+				break;
+			}
+		if(flag)
+		{
+			for(int j = 0 ; j < 10 ; ++ j)
+			{
+				m_leftTile[i][j]->setTileVisible(BLACK);
+			}
+			for(int k = i  ; k < 19 ; ++ k)
+			{
+				for(int j = 0 ; j < 10 ; ++ j)
+				{
+					if(m_leftTile[k + 1][j]->getTileVisible())
+						m_leftTile[k][j]->setTileVisible(BLACK);
+					else
+						m_leftTile[k][j]->setUNVisiable();
+				}
+			}
+			-- i;
+		}
+	}
 }

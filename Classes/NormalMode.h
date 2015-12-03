@@ -39,11 +39,18 @@ private:
 
 	/**更新函数*/
 	void myUpdate(float tmd);
+	/**碰撞检测更新函数*/
+	void myCollionUpdate(float tmd);
 	/**刷新目前放快的位置*/
 	void refreshSquarePos(int ox,int oy);
 
 	/**检测碰撞*/
 	bool isCollion();
+
+	/**显示右半部分*/
+	void showPreviewSquare();
+	/**满行消去*/
+	void removeRow();
 private:
 	/**左边的方块操作背景*/
 	NormalTile* m_leftTile[20][10];
@@ -51,7 +58,12 @@ private:
 	NormalTile* m_rightTile[8][6];
 	/**目前正在掉落的块的信息*/
 	NormalSquare m_square;
+	/**下一个方块的信息*/
+	NormalSquare m_nextSquare;
 private:
+	/**碰撞是否已经发生*/
+	bool m_isCollisionTakePlace;
+
 	/*俄罗斯方块背景的基础坐标*/
 	int m_baseX;
 	int m_baseY;
@@ -64,6 +76,8 @@ private:
 	std::vector<std::vector<bool>> m_lastPos;
 	/**目前的俄罗斯方块的位置*/
 	std::vector<std::vector<bool>> m_currPos;
+	/**显示下一个的俄罗斯方块的位置*/
+	std::vector<std::vector<bool>> m_nextPos;
 };
 
 #endif

@@ -19,15 +19,28 @@ public :
 	void newSquare(int ix,int iy,int kind);
 	/**下降一格*/
 	void downOne(std::vector<std::vector<bool>>& v);
+	/**向左移动*/
+	void leftOne(std::vector<std::vector<bool>>& v);
+	/**向右移动*/
+	void rightOne(std::vector<std::vector<bool>>& v);
 	/**直接降落*/
 	void fall();
 	/**改变翻转*/
-	void changeAngle();
+	void changeAngle(std::vector<std::vector<bool>>& v);
 	/**得到索引的位置*/
 	int getIndexX() const {return m_indexX;}
 	int getIndexY() const {return m_indexY;}
+	/**得到种类*/
+	int getSquareKind() const {return m_squareKind;}
+
+	/**是否已经到底了*/
+	bool isTouchBottom();
+
+	/**展示预览的窗口*/
+	void showPreView(std::vector<std::vector<bool>>& v);
 private:
-	
+	/**各种方块及角度的操作*/
+	void allSquareKindChange(bool b[8][6],int & I,int& J,int kind);
 private:
 	/**目前的方块类型*/
 	int m_squareKind;
