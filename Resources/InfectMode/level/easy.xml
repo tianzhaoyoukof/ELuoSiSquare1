@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<base>
+		<posX>165</posX>
+		<posY>500</posY>
+	</base>
+	<l1 clear="0">
+		<key>5544</key>
+		<key>5400</key>
+		<key>4255</key>
+		<key>1315</key>
+	</l1>
+	<l2 clear="0">
+		<key>0230</key>
+		<key>3033</key>
+		<key>4432</key>
+		<key>2550</key>
+	</l2>
+	<l3 clear="0">
+		<key>5034</key>
+		<key>5110</key>
+		<key>5323</key>
+		<key>3231</key>
+	</l3>
+	<l4 clear="0">
+		<key>5452</key>
+		<key>4331</key>
+		<key>5314</key>
+		<key>4520</key>
+	</l4>
+	<l5 clear="0">
+		<key>0442</key>
+		<key>4423</key>
+		<key>2342</key>
+		<key>0332</key>
+	</l5>
+	<l6 clear="0">
+		<key>3504</key>
+		<key>0242</key>
+		<key>5403</key>
+		<key>2154</key>
+	</l6>
+	<l7 clear="0">
+		<key>2005</key>
+		<key>3500</key>
+		<key>0032</key>
+		<key>5055</key>
+	</l7>
+	<l8 clear="0">
+		<key>2403</key>
+		<key>5330</key>
+		<key>4050</key>
+		<key>5534</key>
+	</l8>
+	<l9 clear="0">
+		<key>5424</key>
+		<key>3444</key>
+		<key>3513</key>
+		<key>1533</key>
+	</l9>
+	<l10 clear="0">
+		<key>5512</key>
+		<key>5024</key>
+		<key>2432</key>
+		<key>0505</key>
+	</l10>
+	<l11 clear="0">
+		<key>4505</key>
+		<key>2313</key>
+		<key>2212</key>
+		<key>2403</key>
+	</l11>
+	<l12 clear="0">
+		<key>0304</key>
+		<key>1051</key>
+		<key>0202</key>
+		<key>1521</key>
+	</l12>
+	<l13 clear="0">
+		<key>0153</key>
+		<key>0514</key>
+		<key>5253</key>
+		<key>2512</key>
+	</l13>
+	<l14 clear="0">
+		<key>4324</key>
+		<key>0512</key>
+		<key>3133</key>
+		<key>1345</key>
+	</l14>
+	<l15 clear="0">
+		<key>2000</key>
+		<key>0225</key>
+		<key>5211</key>
+		<key>0044</key>
+	</l15>
+	<l16 clear="0">
+		<key>2545</key>
+		<key>2534</key>
+		<key>4320</key>
+		<key>2302</key>
+	</l16>
+	<l17 clear="0">
+		<key>4255</key>
+		<key>1000</key>
+		<key>5023</key>
+		<key>1550</key>
+	</l17>
+	<l18 clear="0">
+		<key>4552</key>
+		<key>2231</key>
+		<key>5033</key>
+		<key>3141</key>
+	</l18>
+	<l19 clear="0">
+		<key>2144</key>
+		<key>3342</key>
+		<key>5055</key>
+		<key>2340</key>
+	</l19>
+	<l20 clear="0">
+		<key>5121</key>
+		<key>1210</key>
+		<key>4353</key>
+		<key>1411</key>
+	</l20>
+	<l21 clear="0">
+		<key>1101</key>
+		<key>1534</key>
+		<key>2124</key>
+		<key>5001</key>
+	</l21>
+	<l22 clear="0">
+		<key>2125</key>
+		<key>5131</key>
+		<key>0225</key>
+		<key>5014</key>
+	</l22>
+	<l23 clear="0">
+		<key>0414</key>
+		<key>0211</key>
+		<key>3212</key>
+		<key>2503</key>
+	</l23>
+	<l24 clear="0">
+		<key>3202</key>
+		<key>5343</key>
+		<key>4222</key>
+		<key>1505</key>
+	</l24>
+	<l25 clear="0">
+		<key>2154</key>
+		<key>2002</key>
+		<key>0512</key>
+		<key>5105</key>
+	</l25>
+	<l26 clear="0">
+		<key>1254</key>
+		<key>2502</key>
+		<key>5121</key>
+		<key>5314</key>
+	</l26>
+	<l27 clear="0">
+		<key>1253</key>
+		<key>1035</key>
+		<key>3524</key>
+		<key>2224</key>
+	</l27>
+	<l28 clear="0">
+		<key>5232</key>
+		<key>2415</key>
+		<key>1225</key>
+		<key>1422</key>
+	</l28>
+	<l29 clear="0">
+		<key>1051</key>
+		<key>2424</key>
+		<key>1243</key>
+		<key>1240</key>
+	</l29>
+	<l30 clear="0">
+		<key>5443</key>
+		<key>4045</key>
+		<key>4505</key>
+		<key>1003</key>
+	</l30>
+	<l31 clear="0">
+		<key>4431</key>
+		<key>3231</key>
+		<key>1212</key>
+		<key>2432</key>
+	</l31>
+	<l32 clear="0">
+		<key>5115</key>
+		<key>4444</key>
+		<key>2413</key>
+		<key>3534</key>
+	</l32>
+	<l33 clear="0">
+		<key>0221</key>
+		<key>2125</key>
+		<key>0144</key>
+		<key>1550</key>
+	</l33>
+	<l34 clear="0">
+		<key>0154</key>
+		<key>1232</key>
+		<key>5112</key>
+		<key>0030</key>
+	</l34>
+	<l35 clear="0">
+		<key>1010</key>
+		<key>1404</key>
+		<key>1102</key>
+		<key>0301</key>
+	</l35>
+	<l36 clear="0">
+		<key>3313</key>
+		<key>2212</key>
+		<key>3055</key>
+		<key>3315</key>
+	</l36>
+	<l37 clear="0">
+		<key>1405</key>
+		<key>5024</key>
+		<key>0415</key>
+		<key>2535</key>
+	</l37>
+	<l38 clear="0">
+		<key>5150</key>
+		<key>1232</key>
+		<key>0113</key>
+		<key>3552</key>
+	</l38>
+	<l39 clear="0">
+		<key>0211</key>
+		<key>0413</key>
+		<key>1252</key>
+		<key>0101</key>
+	</l39>
+	<l40 clear="0">
+		<key>2050</key>
+		<key>1313</key>
+		<key>2251</key>
+		<key>0205</key>
+	</l40>
+	<l41 clear="0">
+		<key>0121</key>
+		<key>5224</key>
+		<key>3425</key>
+		<key>5504</key>
+	</l41>
+	<l42 clear="0">
+		<key>5433</key>
+		<key>4130</key>
+		<key>3402</key>
+		<key>5523</key>
+	</l42>
+	<l43 clear="0">
+		<key>4131</key>
+		<key>3403</key>
+		<key>5011</key>
+		<key>5354</key>
+	</l43>
+	<l44 clear="0">
+		<key>3235</key>
+		<key>1154</key>
+		<key>0343</key>
+		<key>0414</key>
+	</l44>
+	<l45 clear="0">
+		<key>1004</key>
+		<key>5305</key>
+		<key>5105</key>
+		<key>4130</key>
+	</l45>
+	<l46 clear="0">
+		<key>2053</key>
+		<key>1204</key>
+		<key>0513</key>
+		<key>3423</key>
+	</l46>
+	<l47 clear="0">
+		<key>0412</key>
+		<key>5552</key>
+		<key>2054</key>
+		<key>5552</key>
+	</l47>
+	<l48 clear="0">
+		<key>3012</key>
+		<key>4013</key>
+		<key>0421</key>
+		<key>4333</key>
+	</l48>
+	<l49 clear="0">
+		<key>5525</key>
+		<key>5343</key>
+		<key>3031</key>
+		<key>5331</key>
+	</l49>
+	<l50 clear="0">
+		<key>4222</key>
+		<key>5022</key>
+		<key>4053</key>
+		<key>4041</key>
+	</l50>
+	<l51 clear="0">
+		<key>0550</key>
+		<key>5013</key>
+		<key>4435</key>
+		<key>1403</key>
+	</l51>
+	<l52 clear="0">
+		<key>2211</key>
+		<key>3514</key>
+		<key>2502</key>
+		<key>5322</key>
+	</l52>
+	<l53 clear="0">
+		<key>0422</key>
+		<key>1343</key>
+		<key>4413</key>
+		<key>5405</key>
+	</l53>
+	<l54 clear="0">
+		<key>4004</key>
+		<key>2445</key>
+		<key>3323</key>
+		<key>3134</key>
+	</l54>
+	<l55 clear="0">
+		<key>4044</key>
+		<key>3320</key>
+		<key>4230</key>
+		<key>1250</key>
+	</l55>
+	<l56 clear="0">
+		<key>4051</key>
+		<key>1442</key>
+		<key>0425</key>
+		<key>5054</key>
+	</l56>
+	<l57 clear="0">
+		<key>3543</key>
+		<key>1043</key>
+		<key>2025</key>
+		<key>3123</key>
+	</l57>
+	<l58 clear="0">
+		<key>0513</key>
+		<key>3122</key>
+		<key>3523</key>
+		<key>2452</key>
+	</l58>
+	<l59 clear="0">
+		<key>3041</key>
+		<key>5133</key>
+		<key>1340</key>
+		<key>3233</key>
+	</l59>
+	<l60 clear="0">
+		<key>3303</key>
+		<key>2224</key>
+		<key>5440</key>
+		<key>4111</key>
+	</l60>
+	<l61 clear="0">
+		<key>1542</key>
+		<key>3210</key>
+		<key>4310</key>
+		<key>5413</key>
+	</l61>
+	<l62 clear="0">
+		<key>4240</key>
+		<key>1123</key>
+		<key>5153</key>
+		<key>2545</key>
+	</l62>
+	<l63 clear="0">
+		<key>0031</key>
+		<key>0203</key>
+		<key>3434</key>
+		<key>3500</key>
+	</l63>
+	<l64 clear="0">
+		<key>4045</key>
+		<key>3224</key>
+		<key>3434</key>
+		<key>5345</key>
+	</l64>
+	<l65 clear="0">
+		<key>0134</key>
+		<key>1304</key>
+		<key>0451</key>
+		<key>3442</key>
+	</l65>
+	<l66 clear="0">
+		<key>0140</key>
+		<key>2524</key>
+		<key>4122</key>
+		<key>3210</key>
+	</l66>
+	<l67 clear="0">
+		<key>5224</key>
+		<key>5233</key>
+		<key>4500</key>
+		<key>1244</key>
+	</l67>
+	<l68 clear="0">
+		<key>4524</key>
+		<key>0251</key>
+		<key>3423</key>
+		<key>0202</key>
+	</l68>
+	<l69 clear="0">
+		<key>0340</key>
+		<key>4013</key>
+		<key>2341</key>
+		<key>2143</key>
+	</l69>
+	<l70 clear="0">
+		<key>2235</key>
+		<key>4142</key>
+		<key>4345</key>
+		<key>5052</key>
+	</l70>
+	<l71 clear="0">
+		<key>0420</key>
+		<key>2343</key>
+		<key>3511</key>
+		<key>3240</key>
+	</l71>
+	<l72 clear="0">
+		<key>5230</key>
+		<key>1233</key>
+		<key>0305</key>
+		<key>5234</key>
+	</l72>
+	<l73 clear="0">
+		<key>1034</key>
+		<key>0015</key>
+		<key>1352</key>
+		<key>5124</key>
+	</l73>
+	<l74 clear="0">
+		<key>0435</key>
+		<key>2124</key>
+		<key>0040</key>
+		<key>3023</key>
+	</l74>
+	<l75 clear="0">
+		<key>1133</key>
+		<key>1311</key>
+		<key>4415</key>
+		<key>0430</key>
+	</l75>
+	<l76 clear="0">
+		<key>3033</key>
+		<key>1324</key>
+		<key>4304</key>
+		<key>4001</key>
+	</l76>
+	<l77 clear="0">
+		<key>4205</key>
+		<key>3442</key>
+		<key>4120</key>
+		<key>0145</key>
+	</l77>
+	<l78 clear="0">
+		<key>1333</key>
+		<key>0054</key>
+		<key>3423</key>
+		<key>0203</key>
+	</l78>
+	<l79 clear="0">
+		<key>0503</key>
+		<key>5422</key>
+		<key>5454</key>
+		<key>0434</key>
+	</l79>
+	<l80 clear="0">
+		<key>1242</key>
+		<key>3512</key>
+		<key>3052</key>
+		<key>3044</key>
+	</l80>
+	<l81 clear="0">
+		<key>4140</key>
+		<key>2340</key>
+		<key>3334</key>
+		<key>5001</key>
+	</l81>
+	<l82 clear="0">
+		<key>0145</key>
+		<key>2152</key>
+		<key>1521</key>
+		<key>4343</key>
+	</l82>
+	<l83 clear="0">
+		<key>1110</key>
+		<key>0543</key>
+		<key>2253</key>
+		<key>3515</key>
+	</l83>
+	<l84 clear="0">
+		<key>4220</key>
+		<key>1255</key>
+		<key>0001</key>
+		<key>0351</key>
+	</l84>
+	<l85 clear="0">
+		<key>1535</key>
+		<key>0200</key>
+		<key>0122</key>
+		<key>5212</key>
+	</l85>
+	<l86 clear="0">
+		<key>1400</key>
+		<key>2023</key>
+		<key>0551</key>
+		<key>0354</key>
+	</l86>
+	<l87 clear="0">
+		<key>0403</key>
+		<key>5254</key>
+		<key>1155</key>
+		<key>2032</key>
+	</l87>
+	<l88 clear="0">
+		<key>4202</key>
+		<key>1241</key>
+		<key>4154</key>
+		<key>2205</key>
+	</l88>
+	<l89 clear="0">
+		<key>2220</key>
+		<key>1212</key>
+		<key>0551</key>
+		<key>1332</key>
+	</l89>
+	<l90 clear="0">
+		<key>0013</key>
+		<key>0152</key>
+		<key>0055</key>
+		<key>2010</key>
+	</l90>
+	<l91 clear="0">
+		<key>4551</key>
+		<key>5041</key>
+		<key>4300</key>
+		<key>4311</key>
+	</l91>
+	<l92 clear="0">
+		<key>4130</key>
+		<key>4123</key>
+		<key>5113</key>
+		<key>0524</key>
+	</l92>
+	<l93 clear="0">
+		<key>2005</key>
+		<key>0535</key>
+		<key>0002</key>
+		<key>1235</key>
+	</l93>
+	<l94 clear="0">
+		<key>4302</key>
+		<key>0553</key>
+		<key>4253</key>
+		<key>0005</key>
+	</l94>
+	<l95 clear="0">
+		<key>4304</key>
+		<key>4521</key>
+		<key>0002</key>
+		<key>5441</key>
+	</l95>
+	<l96 clear="0">
+		<key>2010</key>
+		<key>1103</key>
+		<key>5104</key>
+		<key>0212</key>
+	</l96>
+	<l97 clear="0">
+		<key>1035</key>
+		<key>3124</key>
+		<key>3101</key>
+		<key>3045</key>
+	</l97>
+	<l98 clear="0">
+		<key>1243</key>
+		<key>1304</key>
+		<key>5020</key>
+		<key>5310</key>
+	</l98>
+	<l99 clear="0">
+		<key>0514</key>
+		<key>4315</key>
+		<key>3100</key>
+		<key>2112</key>
+	</l99>
+	<l100 clear="0">
+		<key>4550</key>
+		<key>0555</key>
+		<key>5320</key>
+		<key>0433</key>
+	</l100>
+</data>

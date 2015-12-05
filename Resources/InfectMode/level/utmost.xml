@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<btnBase>
+		<posX>85</posX>
+		<posY>270</posY>
+	</btnBase>
+	<btnUP>
+		<posX>220</posX>
+		<posY>300</posY>
+	</btnUP>
+	<btnDOWN>
+		<posX>220</posX>
+		<posY>140</posY>
+	</btnDOWN>
+	<btnLEFT>
+		<posX>140</posX>
+		<posY>220</posY>
+	</btnLEFT>
+	<btnRIGHT>
+		<posX>300</posX>
+		<posY>220</posY>
+	</btnRIGHT>
+	<btnCHANGE>
+		<posX>540</posX>
+		<posY>220</posY>
+	</btnCHANGE>
+</data>

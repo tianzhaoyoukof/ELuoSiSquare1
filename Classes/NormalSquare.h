@@ -27,6 +27,7 @@ public :
 	void fall();
 	/**改变翻转*/
 	void changeAngle(std::vector<std::vector<bool>>& v);
+	void changeAngle(std::vector<std::vector<bool>>& v,std::vector<std::vector<bool>>& v1);
 	/**得到索引的位置*/
 	int getIndexX() const {return m_indexX;}
 	int getIndexY() const {return m_indexY;}
@@ -41,6 +42,8 @@ public :
 private:
 	/**各种方块及角度的操作*/
 	void allSquareKindChange(bool b[8][6],int & I,int& J,int kind);
+	/**方块是否能翻转*/
+	bool canFlipSquare(std::vector<std::vector<bool>>& t);
 private:
 	/**目前的方块类型*/
 	int m_squareKind;

@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "NormalMode.h"
+#include "InfectMode.h"
 
 #define WIDTH 720
 #define HEIGHT 1280
@@ -34,7 +35,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    auto scene = NormalMode::createMode();
+    auto scene = InfectMode::createMode();
 
     // run
     director->runWithScene(scene);

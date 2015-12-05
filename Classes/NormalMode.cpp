@@ -46,7 +46,6 @@ bool NormalMode::init()
 		}
 
 	this->schedule(schedule_selector(NormalMode::myUpdate),0.6f);
-	this->schedule(schedule_selector(NormalMode::myCollionUpdate),0.2f);
 
 	return true;
 }
@@ -54,7 +53,7 @@ bool NormalMode::init()
 NormalMode::NormalMode():
 	m_baseX(0),
 	m_baseY(0),
-	m_square(4,19,5),
+	m_square(4,19,7),
 	m_nextSquare(7,13,4)
 {
 	int x = rand() % 2 + 1;
@@ -111,23 +110,17 @@ void NormalMode::addBackGround()
 void NormalMode::btnUPCallBack()
 {
 	log("up");
-	if(m_isCollisionTakePlace)
-		return ;
 }
 
 void NormalMode::btnDOWNCallBack()
 {
 	log("down");
-	if(m_isCollisionTakePlace)
-		return ;
 	myUpdate(0.1f);
 }
 
 void NormalMode::btnLEFTCallBack()
 {
 	log("left");
-	if(m_isCollisionTakePlace)
-		return ;
 	m_currPos.clear();
 	m_square.leftOne(m_currPos);
 
@@ -170,8 +163,6 @@ void NormalMode::btnLEFTCallBack()
 void NormalMode::btnRIGHTCallBack()
 {
 	log("right");
-	if(m_isCollisionTakePlace)
-		return ;
 	m_currPos.clear();
 	m_square.rightOne(m_currPos);
 	
@@ -217,12 +208,43 @@ void NormalMode::btnRIGHTCallBack()
 void NormalMode::btnCHANGECallBack()
 {
 	log("change");
-	if(m_isCollisionTakePlace)
-		return ;
+
 	m_currPos.clear();
 	m_square.changeAngle(m_currPos);
+
+	int n = m_currPos.size();
+	int m = 0;
+	if(n)
+		m = m_currPos[0].size();
+
+	//首先要检测变换的位置是否有方块
+	std::vector<std::vector<bool>> temp;
+	std::vector<bool> t;
+	
 	int ox = m_square.getIndexX();
 	int oy = m_square.getIndexY();
+
+	for(int i = 0 ; i < n ; ++ i)
+	{
+		t.clear();
+		for(int j = 0 ; j < m ; ++ j)
+		{
+			if(ox + j < 0 || ox + j >= 10 || oy + i < 0 || oy + i >= 20)
+				t.push_back(false);
+			else if(m_leftTile[oy + i][ox + j]->getTileVisible())
+				t.push_back(true);
+			else
+				t.push_back(false);
+		}
+		temp.push_back(t);
+	}
+
+	m_currPos.clear();
+	m_square.changeAngle(m_currPos,temp);
+
+	ox = m_square.getIndexX();
+	oy = m_square.getIndexY();
+
 	refreshSquarePos(ox,oy);
 	m_lastIndexX = ox;
 	m_lastIndexY = oy;
@@ -237,13 +259,14 @@ void NormalMode::myUpdate( float tmd )
 	showPreviewSquare();
 
 	/*碰撞检测*/
-	if(isCollion() || m_isCollisionTakePlace)
+	if(isCollion())
 	{
 		//检测满行消去
 		removeRow();
-		int ox = rand() % 4 + 1;
+		int ox = rand() % 7 + 1;
 		m_lastPos.clear();
 		m_square.newSquare(3,19,m_nextSquare.getSquareKind());
+		m_square.newSquare(3,19,7);
 		m_nextSquare.newSquare(1,1,ox);
 		m_isCollisionTakePlace = false;
 		return ;
@@ -316,7 +339,7 @@ bool NormalMode::isCollion()
 				continue;
 			if(m_square.isTouchBottom())
 				return true;
-			if(m_lastPos[i][j] == true)
+			if(m_lastPos[i][j] == true && m_lastIndexY + i != 0)
 			{
 				if(m_leftTile[m_lastIndexY + i - 1][m_lastIndexX + j]->getTileVisible())
 					return true;

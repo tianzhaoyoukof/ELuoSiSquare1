@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<base>
+		<posX>90</posX>
+		<posY>400</posY>
+	</base>
+	<leftBtn>
+		<posX>85</posX>
+		<posY>270</posY>
+	</leftBtn>
+	<rightBtn>
+		<posX>85</posX>
+		<posY>270</posY>
+	</rightBtn>
+</data>
